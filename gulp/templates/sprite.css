@@ -1,0 +1,15 @@
+/*Auto-generated css file. DO NOT MODIFY DIRECTLY. See gulp/templates/sprite.css */
+
+{{#shapes}}
+	{{#first}}
+	.icon {
+		background-image: url('/assets/images/sprites/{{{sprite}}}');
+	}
+	{{/first}}
+
+	.icon--{{base}} {
+		width:{{width.outer}}px;
+		height:{{height.outer}}px;
+		background-position: {{position.relative.xy}};
+	}
+{{/shapes}}
