@@ -12,6 +12,13 @@ var config = {
 	},
 	mode: {
 		css:{
+			variables: {
+				replaceSvgWithPng: function() {
+					return function(sprite, render) {
+						return render(sprite).split('.svg').join('.png');
+					}
+				}
+			},
 			sprite: 'sprite.svg',
 			render: {
 				css: {
@@ -32,9 +39,8 @@ gulp.task('createSprite', ['beginClean'], function() {
 		.pipe(gulp.dest('./app/temp/sprite/'));
 });
 
-//this is not working - tried re-installing, checked if created but not copied by removing the endClean task (not created at all), checked online for alternate syntax (everything says the same thing), no errors in console
 gulp.task('createPngCopy', ['createSprite'], function() {
-	return gulp.src('.app/temp/sprite/css/**/*.svg')
+	return gulp.src('./app/temp/sprite/css/**/*.svg')
 		.pipe(svg2png())
 		.pipe(gulp.dest('./app/temp/sprite/css'));
 });

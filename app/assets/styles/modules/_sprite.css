@@ -4,6 +4,10 @@
 		background-image: url('/assets/images/sprites/sprite-e79e95cc.svg');
 	}
 
+	.no-svg .icon {
+		background-image: url('/assets/images/sprites/sprite-e79e95cc.png');
+	}
+
 	.icon--clear-view-escapes {
 		width:144.4px;
 		height:61.53px;
